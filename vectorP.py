@@ -1,12 +1,11 @@
-import universal_element as ue
 import numpy as np
 
 
 class vectorP:
-    def __init__(self,integrationPointsNumber,nodes,nodesBounderConditionFlags,alpha, Tambient):
-        self.universalElement2D = ue.UniversalElement2D(integrationPointsNumber)
-        W = self.universalElement2D.W
-        BCis_shapeFuncsTab = self.universalElement2D.BCis_shapeFuncsTab
+    def __init__(self,integrationPointsNumber,universalElement ,nodes,nodesBounderConditionFlags,alpha, Tambient):
+        # self.universalElement2D = ue.UniversalElement2D(integrationPointsNumber)
+        W = universalElement.W
+        BCis_shapeFuncsTab = universalElement.BCis_shapeFuncsTab
         
         self.vectorsP = np.zeros((4,4), dtype=float)
 

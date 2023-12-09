@@ -1,8 +1,5 @@
 import numpy as np
-import real_element
-
-
-                
+         
 
 class matrixH:
     """
@@ -15,8 +12,8 @@ class matrixH:
               UWAGA, nalezy poprawnie okreslic wierzcholki na podstawie danych zawartych w grid.Elements
         heatTransferCoeff -> wspolczynnik wymiany ciepla (konwekcyjno- radiacyjny)
     """
-    def __init__(self,integrationPointsNumber,nodes, heatTransferCoeff = 30):
-        self.realElement = real_element.RealElement2D(integrationPointsNumber,nodes)
+    def __init__(self,integrationPointsNumber,realElement,nodes, heatTransferCoeff = 30):
+        self.realElement = realElement
         self.dNdXTab = self.realElement.dNdXTab
         self.dNdYTab = self.realElement.dNdYTab
         self.dV = self.realElement.detJ_iPC

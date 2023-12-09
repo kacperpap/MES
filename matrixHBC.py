@@ -1,13 +1,11 @@
-import universal_element as ue
 import numpy as np
 
 
 class matrixHBC:
-    def __init__(self,integrationPointsNumber,nodes,nodesBounderConditionFlags,alpha):
-        self.universalElement2D = ue.UniversalElement2D(integrationPointsNumber)
+    def __init__(self,integrationPointsNumber,universalElement,nodes,nodesBounderConditionFlags,alpha):
         #Obliczanie macierzy Hbc dla kazdej plaszczyzny (ściany ze wzoru: SUMA(0...n_pkt_na_ścianie)(alfa * (({N}{N}^T * w1) + ({N}{N}^T * w2))))
-        W = self.universalElement2D.W
-        BCis_shapeFuncsTab = self.universalElement2D.BCis_shapeFuncsTab
+        W = universalElement.W
+        BCis_shapeFuncsTab = universalElement.BCis_shapeFuncsTab
         
 
         self.HBCs = np.zeros((4,4,4), dtype=float)

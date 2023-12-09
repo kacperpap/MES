@@ -1,0 +1,210 @@
+         20806 function calls (20616 primitive calls) in 0.081 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      100    0.019    0.000    0.027    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:70(__init__)
+       72    0.014    0.000    0.015    0.000 C:\Python311\Lib\site-packages\numpy\linalg\linalg.py:469(inv)
+       12    0.011    0.001    0.015    0.001 {built-in method builtins.print}
+       18    0.003    0.000    0.048    0.003 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\real_element.py:16(__init__)
+       72    0.002    0.000    0.022    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:168(__init__)
+       72    0.001    0.000    0.003    0.000 C:\Python311\Lib\site-packages\numpy\linalg\linalg.py:2085(det)
+        9    0.001    0.000    0.001    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\aggregation.py:15(aggregate)
+      100    0.001    0.000    0.002    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\gauss_integration.py:14(gaussIntegrationSchemaiD)
+      132    0.001    0.000    0.001    0.000 C:\Python311\Lib\site-packages\numpy\core\numeric.py:858(outer)
+       11    0.001    0.000    0.001    0.000 {built-in method scipy.sparse.linalg._dsolve._superlu.gssv}
+     1029    0.001    0.000    0.001    0.000 {built-in method numpy.zeros}
+     1200    0.001    0.000    0.001    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:45(N1)
+     1200    0.001    0.000    0.001    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:47(N2)
+     1200    0.001    0.000    0.001    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:51(N4)
+     1200    0.001    0.000    0.001    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:49(N3)
+      478    0.001    0.000    0.021    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+    171/1    0.001    0.000    0.003    0.003 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:789(recurser)
+        9    0.001    0.000    0.026    0.003 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\matrixH.py:18(__init__)
+        9    0.001    0.000    0.025    0.003 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\matrixC.py:6(__init__)
+       60    0.001    0.000    0.002    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_sputils.py:147(get_index_dtype)
+        9    0.001    0.000    0.003    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\matrixHBC.py:6(__init__)
+        9    0.001    0.000    0.001    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\vectorP.py:5(__init__)
+      144    0.001    0.000    0.001    0.000 C:\Python311\Lib\site-packages\numpy\linalg\linalg.py:136(_commonType)
+      160    0.001    0.000    0.001    0.000 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:1018(__call__)
+      100    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:6(__init__)
+      320    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.dragon4_positional}
+        1    0.000    0.000    0.081    0.081 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\main.py:32(main)
+       98    0.000    0.000    0.000    0.000 {method 'astype' of 'numpy.ndarray' objects}
+     1771    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+    30/26    0.000    0.000    0.004    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:26(__init__)
+      160    0.000    0.000    0.001    0.000 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:739(_extendLine)
+       30    0.000    0.000    0.002    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:136(check_format)
+       30    0.000    0.000    0.000    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+      160    0.000    0.000    0.001    0.000 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:753(_extendLine_pretty)
+       72    0.000    0.000    0.000    0.000 {method 'astype' of 'numpy.generic' objects}
+       32    0.000    0.000    0.001    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_sputils.py:295(check_shape)
+      147    0.000    0.000    0.000    0.000 {built-in method numpy.array}
+      400    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:29(dN1_dKsi)
+      120    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\getlimits.py:668(__init__)
+      132    0.000    0.000    0.002    0.000 <__array_function__ internals>:177(outer)
+       31    0.000    0.000    0.001    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:1168(prune)
+      400    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:39(dN2_dEta)
+      400    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:37(dN1_dEta)
+      168    0.000    0.000    0.001    0.000 <__array_function__ internals>:177(can_cast)
+        1    0.000    0.000    0.004    0.004 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\solve.py:67(print_simulation)
+        1    0.000    0.000    0.007    0.007 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\solve.py:6(__init__)
+      400    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:31(dN2_dKsi)
+      144    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\linalg\linalg.py:186(_assert_stacked_square)
+      613    0.000    0.000    0.000    0.000 {built-in method numpy.asarray}
+      288    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\linalg\linalg.py:117(isComplexType)
+      400    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:43(dN4_dEta)
+      400    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:33(dN3_dKsi)
+      400    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:35(dN4_dKsi)
+      400    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\universal_element.py:41(dN3_dEta)
+       11    0.000    0.000    0.002    0.000 C:\Python311\Lib\site-packages\scipy\sparse\linalg\_dsolve\linsolve.py:126(spsolve)
+       72    0.000    0.000    0.003    0.000 <__array_function__ internals>:177(det)
+        1    0.000    0.000    0.001    0.001 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:934(fillFormat)
+      161    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:984(<genexpr>)
+        9    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\grid.py:245(getElement)
+      161    0.000    0.000    0.001    0.000 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:989(<genexpr>)
+      144    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\linalg\linalg.py:180(_assert_stacked_2d)
+      144    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\linalg\linalg.py:130(_realType)
+      161    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:993(<genexpr>)
+       72    0.000    0.000    0.016    0.000 <__array_function__ internals>:177(inv)
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+       72    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\linalg\linalg.py:112(_makearray)
+      275    0.000    0.000    0.000    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+      436    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+       22    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\fromnumeric.py:69(_wrapreduction)
+      100    0.000    0.000    0.000    0.000 {built-in method builtins.pow}
+      145    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:291(nnz)
+      305    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+      137    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:108(getnnz)
+       22    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_csc.py:236(isspmatrix_csc)
+      161    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:994(<genexpr>)
+       22    0.000    0.000    0.003    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:1224(_with_data)
+       72    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\linalg\linalg.py:107(get_linalg_error_extobj)
+       11    0.000    0.000    0.001    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_data.py:123(_mul_scalar)
+        2    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_coo.py:127(__init__)
+       11    0.000    0.000    0.003    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:642(_divide)
+      160    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       96    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_sputils.py:308(<genexpr>)
+       25    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_sputils.py:238(isshape)
+       65    0.000    0.000    0.000    0.000 {method 'copy' of 'numpy.ndarray' objects}
+       60    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\getlimits.py:679(min)
+      118    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+      181    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       72    0.000    0.000    0.000    0.000 {method '__array_prepare__' of 'numpy.ndarray' objects}
+      100    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\gauss_integration.py:9(__init__)
+       10    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:480(_mul_vector)
+      160    0.000    0.000    0.000    0.000 {method 'splitlines' of 'str' objects}
+        2    0.000    0.000    0.001    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_coo.py:372(tocsr)
+       62    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\_lib\_util.py:143(_prune_array)
+      144    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\linalg\linalg.py:465(_unary_dispatcher)
+       22    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\fromnumeric.py:70(<dictcomp>)
+      132    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\numeric.py:854(_outer_dispatcher)
+        5    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_sputils.py:22(upcast)
+        9    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\grid.py:260(getElementIDs)
+       22    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\numeric.py:1878(isscalar)
+       10    0.000    0.000    0.000    0.000 {built-in method scipy.sparse._sparsetools.csr_matvec}
+       11    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\fromnumeric.py:2703(amax)
+       32    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+      168    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\multiarray.py:502(can_cast)
+       37    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:405(parent)
+      139    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:119(get_shape)
+       11    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(amax)
+        2    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_coo.py:266(_check)
+       22    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_sputils.py:211(isscalarlike)
+       32    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_data.py:20(__init__)
+       10    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:626(__matmul__)
+       32    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:105(__init__)
+        1    0.000    0.000    0.001    0.001 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:907(__init__)
+       60    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\getlimits.py:692(max)
+     10/2    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+       22    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_sputils.py:362(is_pydata_spmatrix)
+       10    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:510(_mul_dispatch)
+       11    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_csr.py:333(isspmatrix_csr)
+       96    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_sputils.py:313(<genexpr>)
+       44    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:1301(isspmatrix)
+       36    0.000    0.000    0.000    0.000 {built-in method numpy.empty}
+       11    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(amin)
+       11    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\fromnumeric.py:2829(amin)
+       11    0.000    0.000    0.002    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_data.py:68(astype)
+       11    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:1081(__get_has_canonical_format)
+       69    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_data.py:23(_get_dtype)
+        2    0.000    0.000    0.000    0.000 {method 'nonzero' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.004    0.004 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:561(array2string)
+       11    0.000    0.000    0.003    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:685(__truediv__)
+        1    0.000    0.000    0.004    0.004 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:523(_array2string)
+       11    0.000    0.000    0.002    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_data.py:91(copy)
+       32    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_sputils.py:93(to_native)
+        8    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_coo.py:240(getnnz)
+        1    0.000    0.000    0.001    0.001 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:452(_get_format_function)
+       91    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_csr.py:231(_swap)
+        1    0.000    0.000    0.004    0.004 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:506(wrapper)
+        1    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:1238(_binopt)
+        2    0.000    0.000    0.000    0.000 {built-in method scipy.sparse._sparsetools.csr_has_canonical_format}
+        2    0.000    0.000    0.000    0.000 {built-in method scipy.sparse._sparsetools.coo_tocsr}
+        1    0.000    0.000    0.000    0.000 C:\Users\kacpe\OneDrive\Pulpit\MES\projekt\aggregation.py:8(__init__)
+        3    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\numeric.py:290(full)
+        1    0.000    0.000    0.003    0.003 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:780(_formatArray)
+       11    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:240(asfptype)
+       10    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_sputils.py:56(upcast_char)
+       41    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+       64    0.000    0.000    0.000    0.000 {built-in method _operator.index}
+       37    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\_ufunc_config.py:33(seterr)
+        1    0.000    0.000    0.000    0.000 {built-in method scipy.sparse._sparsetools.csr_plus_csr}
+        2    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:73(_coo_container)
+        1    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:64(_make_options_dict)
+       11    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:1111(sum_duplicates)
+        1    0.000    0.000    0.004    0.004 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:1571(_array_str_implementation)
+        3    0.000    0.000    0.001    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:348(asformat)
+       11    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+       11    0.000    0.000    0.000    0.000 <frozen abc>:117(__instancecheck__)
+        2    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\shape_base.py:81(atleast_2d)
+        5    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:125(_set_self)
+        2    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:83(_csr_container)
+       23    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        4    0.000    0.000    0.000    0.000 {method 'max' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:359(_add_sparse)
+        1    0.000    0.000    0.001    0.001 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:411(<lambda>)
+       11    0.000    0.000    0.000    0.000 {built-in method numpy.promote_types}
+        3    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(copyto)
+       11    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_sputils.py:268(isdense)
+        4    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(empty_like)
+     10/2    0.000    0.000    0.000    0.000 <frozen abc>:121(__subclasscheck__)
+       11    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       11    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\fromnumeric.py:2698(_amax_dispatcher)
+        2    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\_ufunc_config.py:132(geterr)
+        4    0.000    0.000    0.000    0.000 {method 'min' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\_ufunc_config.py:430(__enter__)
+        4    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:749(__getattr__)
+        3    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(result_type)
+       11    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\fromnumeric.py:2824(_amin_dispatcher)
+        4    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\_methods.py:39(_amax)
+        1    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_base.py:462(__add__)
+        1    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:403(_get_formatdict)
+        2    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(atleast_2d)
+        2    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:1103(__set_has_canonical_format)
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.hash}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.locals}
+        1    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:72(<dictcomp>)
+        4    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\_methods.py:43(_amin)
+        2    0.000    0.000    0.000    0.000 {built-in method numpy.seterrobj}
+        1    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\_ufunc_config.py:435(__exit__)
+        1    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\_ufunc_config.py:426(__init__)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        4    0.000    0.000    0.000    0.000 {built-in method numpy.geterrobj}
+        1    0.000    0.000    0.000    0.000 {method 'discard' of 'set' objects}
+        3    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\multiarray.py:1079(copyto)
+        4    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\multiarray.py:84(empty_like)
+        1    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+        2    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\scipy\sparse\_compressed.py:1143(__set_sorted)
+        3    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\multiarray.py:668(result_type)
+        2    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.id}
+        1    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method numpy.asanyarray}
+        2    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\shape_base.py:77(_atleast_2d_dispatcher)
+        1    0.000    0.000    0.000    0.000 C:\Python311\Lib\site-packages\numpy\core\arrayprint.py:898(_none_or_positive_arg)
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        1    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+
+

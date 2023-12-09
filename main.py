@@ -10,25 +10,54 @@ import vectorP
 import aggregation
 import solve
 import matrixC
+import cProfile
+import pstats
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--verbose", help="Wyświetl kroki rozwiązania", action="store_true")
+parser.add_argument("-p", "--profile", help="Wyświetl statystyki efektywności kodu", action="store_true")
+
 
 args = parser.parse_args()
 
 
 
 # selectedGrid = grid.Grid("Test1_4_4.txt")
-# selectedGrid = grid.Grid("Test2_4_4_MixGrid.txt")
-selectedGrid = grid.Grid("Test3_31_31_kwadrat.txt")
+selectedGrid = grid.Grid("Test2_4_4_MixGrid.txt")
+# selectedGrid = grid.Grid("Test3_31_31_kwadrat.txt")
 
-integrationPoints = 4
+integrationPoints = 2
 
 
+def main():           
+    agreg = aggregation.Agregation(selectedGrid.GlobalData.NodesNumber)
+    ue = universal_element.UniversalElement2D(integrationPoints)
+        
+    for i in range(selectedGrid.GlobalData.ElementsNumber):
+        nodesData = selectedGrid.getElement(i)
+        nodesGlobalIDs = selectedGrid.getElementIDs(i)
+        realElementInstance = real_element.RealElement2D(integrationPoints,ue,nodesData[0])
+        Hinstance = matrixH.matrixH(integrationPoints,realElementInstance,nodesData[0],selectedGrid.GlobalData.Conductivity)
+        HBCinstance = matrixHBC.matrixHBC(integrationPoints,ue,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa)
+        Pinstance = vectorP.vectorP(integrationPoints,ue,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa,selectedGrid.GlobalData.Tot)
+        Cinstance = matrixC.matrixC(integrationPoints,nodesData[0],realElementInstance,selectedGrid.GlobalData.SpecificHeat, selectedGrid.GlobalData.Density)
 
-try:
-    if args.verbose:
-        with open('output.txt', 'w') as f:
+        agreg.aggregate(Hinstance.H, HBCinstance.HBC, Pinstance.vectorP, Cinstance.C, nodesGlobalIDs)
+        
+        # agreg.print_HG()
+        # print(f'\nWektor P zagregowany:\n')
+        # agreg.print_PG()
+        # print(f'\Macierz C zagregowana:\n')
+        # agreg.print_CG()
+        
+    s = solve.Solve(agreg.HG, agreg.PG, agreg.CG, selectedGrid.GlobalData.InitialTemp,selectedGrid.GlobalData.SimulationStepTime, selectedGrid.GlobalData.SimulationTime)
+    #s.print_tvector(s.t_nonstationary_end)
+    s.print_simulation()
+    # print(s.t_nonstationary_table)
+
+
+def debug_output():
+    with open('output.txt', 'w') as f:
             print("Uruchomiono program z opcja -v\n", file=f)
             print("\nDane globalne\n",file=f)
             selectedGrid.GlobalData.printGlobalData(f)
@@ -72,30 +101,30 @@ try:
                 print(nodesData[0],file=f)
                 print("\n(" + str(i) + ")" + "Jakobiany oraz wyznaczniki jakobianow dla podanych wezlow dla kolejnych punktow calkowania", file=f)
                 for k in range(integrationPoints**2):
-                    j = universal_element.JacobyMatrix(nodesData[0],k, integrationPoints)
+                    j = universal_element.JacobyMatrix(nodesData[0],ue,k, integrationPoints)
                     print("\nPC[" + str(k) + "]:", file=f)
                     print(j.jacobian, file=f)
                     print("det(" + "PC[" + str(k) + "]" + "):", file=f)
                     print(np.linalg.det(j.jacobian), file=f)
-                r= real_element.RealElement2D(integrationPoints,nodesData[0])
+                r= real_element.RealElement2D(integrationPoints,ue,nodesData[0])
                 print("\n(" + str(i) + ")" + "Macierz dN / dX dla wskazanych wezlow", file=f)
                 print(r.dNdXTab, file=f)
                 print("\n(" + str(i) + ")" + "Macierz dN / dY dla wskazanych wezlow", file=f)
                 print(r.dNdYTab, file=f)
-                h = matrixH.matrixH(integrationPoints,nodesData[0],selectedGrid.GlobalData.Conductivity)
+                h = matrixH.matrixH(integrationPoints,r ,nodesData[0],selectedGrid.GlobalData.Conductivity)
                 print("\n(" + str(i) + ")" + "Macierz H wskazanych wezlow", file=f)
                 print(h.H, file=f)
-                hbc = matrixHBC.matrixHBC(integrationPoints,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa)
+                hbc = matrixHBC.matrixHBC(integrationPoints,ue,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa)
                 print("\n(" + str(i) + ")" + "Macierze HBC dla poszczegolnych scian elementu", file=f)
                 print(hbc.HBCs, file=f)
                 print("\n(" + str(i) + ")" + "Macierz HBC dla elementu", file=f)
                 print(hbc.HBC, file=f)
                 print("\n(" + str(i) + ")" + "Wektory P dla poszczegolnych scian elementu", file=f)
-                P = vectorP.vectorP(integrationPoints,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa,selectedGrid.GlobalData.Tot)
+                P = vectorP.vectorP(integrationPoints,ue,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa,selectedGrid.GlobalData.Tot)
                 print(P.vectorsP, file=f)
                 print("\n(" + str(i) + ")" + "Wektor P dla elementu", file=f)
                 print(P.vectorP, file=f)
-                c = matrixC.matrixC(integrationPoints,nodesData[0], selectedGrid.GlobalData.SpecificHeat, selectedGrid.GlobalData.Density)
+                c = matrixC.matrixC(integrationPoints,nodesData[0],r ,selectedGrid.GlobalData.SpecificHeat, selectedGrid.GlobalData.Density)
                 print("\n(" + str(i) + ")" + "Macierz C dla elementu", file=f)
                 print(c.C, file=f)
                 nodesGlobalIDs = selectedGrid.getElementIDs(i)
@@ -114,61 +143,29 @@ try:
             print("\n\nTabela obliczen symulacji dla wszystkich krokow i wszystkich wezlow", file=f)
             print(s.t_nonstationary_table, file=f)
 
-        f.close()
-
-            
-    
-    else:
-        # for i in range(selectedGrid.GlobalData.ElementsNumber):
-        #     nodesData = selectedGrid.getElement(i)
-        #     H = matrixH.matrixH(integrationPoints,nodesData[0],selectedGrid.GlobalData.Conductivity)
-        #     print(H.H)
-            
-        # for i in range(selectedGrid.GlobalData.ElementsNumber):
-        #     nodesData = selectedGrid.getElement(i)
-        #     HBC = matrixHBC.matrixHBC(integrationPoints,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa)
-        #     HBC.printHBC()
-            
-        # for i in range(selectedGrid.GlobalData.ElementsNumber):
-        #     nodesData = selectedGrid.getElement(i)
-        #     P = vectorP.vectorP(integrationPoints,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa,selectedGrid.GlobalData.Tot)
-        #     P.printP()
-            
-        agreg = aggregation.Agregation(selectedGrid.GlobalData.NodesNumber)
-        
-        for i in range(selectedGrid.GlobalData.ElementsNumber):
-            nodesData = selectedGrid.getElement(i)
-            nodesGlobalIDs = selectedGrid.getElementIDs(i)
-            Hinstance = matrixH.matrixH(integrationPoints,nodesData[0],selectedGrid.GlobalData.Conductivity)
-            HBCinstance = matrixHBC.matrixHBC(integrationPoints,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa)
-            Pinstance = vectorP.vectorP(integrationPoints,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa,selectedGrid.GlobalData.Tot)
-            Cinstance = matrixC.matrixC(integrationPoints,nodesData[0], selectedGrid.GlobalData.SpecificHeat, selectedGrid.GlobalData.Density)
-
-            agreg.aggregate(Hinstance.H, HBCinstance.HBC, Pinstance.vectorP, Cinstance.C, nodesGlobalIDs)
-        
-        # agreg.print_HG()
-        # print(f'\nWektor P zagregowany:\n')
-        # agreg.print_PG()
-        # print(f'\Macierz C zagregowana:\n')
-        # agreg.print_CG()
-        
-        print(f'\nWektor t (temperatura w kazdym wezle)\n')
-        s = solve.Solve(agreg.HG, agreg.PG, agreg.CG, selectedGrid.GlobalData.InitialTemp,selectedGrid.GlobalData.SimulationStepTime, selectedGrid.GlobalData.SimulationTime)
-        #s.print_tvector(s.t_nonstationary_end)
-        #s.print_simulation()
-        print(s.t_nonstationary_table)
-        
-                
-except TypeError | ValueError | IndexError as e:
-    print(str(e))
-
-    
+    f.close()
 
 
 
 
-
-
+if __name__ == "__main__":
+    try:
+        if args.verbose:
+            debug_output()
+        elif args.profile:
+            profiler = cProfile.Profile()
+            profiler.enable()
+            main()
+            profiler.disable()
+            with open('efficiency.txt', 'w') as f:
+                ps = pstats.Stats(profiler, stream=f)
+                ps.sort_stats('tottime')
+                ps.print_stats()
+        else:
+            main()
+                        
+    except (TypeError, ValueError, IndexError) as e:
+        print(str(e))
 
 
 

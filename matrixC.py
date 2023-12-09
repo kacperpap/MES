@@ -1,11 +1,10 @@
 import numpy as np
-import real_element
 
 
 class matrixC:
-    def __init__(self,integrationPointsNumber,nodes ,specificHeat, density):
+    def __init__(self,integrationPointsNumber,nodes,realElement,specificHeat, density):
         
-        self.realElement = real_element.RealElement2D(integrationPointsNumber,nodes)
+        self.realElement = realElement
         self.NTab = self.realElement.universalElement2D.shapeFunTab
         self.dV = self.realElement.detJ_iPC
         

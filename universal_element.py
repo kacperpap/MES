@@ -165,12 +165,12 @@ class JacobyMatrix:
     jacobian -> macierz o rozmiarach wymiar_przestrzeni x wymiar_przestrzeni (dla 2D to 2x2)
     detJ -> wyznacznik macierzy jacobian
     """
-    def __init__(self, nodes_,iPC, integrationPointsNumber):
+    def __init__(self, nodes_,universalElement ,iPC, integrationPointsNumber):
         if not (isinstance(nodes_, np.ndarray) and (nodes_.shape ==(4,2))):
             raise TypeError("\n\tJacobyMatrix: nodes_ must be type np.array((4,2))")
         
         self.nodes = nodes_
-        self.shapeDerivatives = UniversalElement2D(integrationPointsNumber)
+        self.shapeDerivatives = universalElement
         self.jacobian = np.zeros((2,2), dtype=float)
         
         self.dXdKsi = 0; self.dYdKsi = 0; self.dXdEta = 0; self.dYdEta = 0
