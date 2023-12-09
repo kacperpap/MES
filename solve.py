@@ -1,6 +1,7 @@
 import numpy as np
 import scipy.sparse
 import scipy.sparse.linalg
+import os
 
 class Solve:
     def __init__(self, H, P, C, initialTemperature, simulationStepTime, simulationTime):
@@ -66,7 +67,7 @@ class Solve:
             
     def print_simulation(self, f=None):
         step_time = self.simulationTime / len(self.t_nonstationary_table)
-
+        
         for i in range(len(self.t_nonstationary_table)):
             time = (i+1) * step_time
 
@@ -74,9 +75,12 @@ class Solve:
             min_temp = np.min(self.t_nonstationary_table[i])
 
             if f is None:
-                print(f"Czas: {time:.2f}, Max temp: {max_temp:.2f}, Min temp: {min_temp:.2f}")
+                header = f"\033[92m{'='*20} Krok {i+1} {'='*30}\033[0m"  
+                print(header)
+
+                print(f"\033[93mCzas:\033[0m {time:.2f}, \033[91mMax temp:\033[0m {max_temp:.2f}, \033[94mMin temp:\033[0m {min_temp:.2f}")
+                print("\033[92m" + "-"*(55 + len(str({i+1}))) + "\033[0m\n")
             else:
                 print(f"Czas: {time:.2f}, Max temp: {max_temp:.2f}, Min temp: {min_temp:.2f}", file=f)
-
         
         

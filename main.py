@@ -29,7 +29,7 @@ selectedGrid = grid.Grid("Test2_4_4_MixGrid.txt")
 integrationPoints = 2
 
 
-def main():           
+def main():
     agreg = aggregation.Agregation(selectedGrid.GlobalData.NodesNumber)
     ue = universal_element.UniversalElement2D(integrationPoints)
         
@@ -37,21 +37,14 @@ def main():
         nodesData = selectedGrid.getElement(i)
         nodesGlobalIDs = selectedGrid.getElementIDs(i)
         realElementInstance = real_element.RealElement2D(integrationPoints,ue,nodesData[0])
-        Hinstance = matrixH.matrixH(integrationPoints,realElementInstance,nodesData[0],selectedGrid.GlobalData.Conductivity)
+        Hinstance = matrixH.matrixH(integrationPoints,realElementInstance,selectedGrid.GlobalData.Conductivity)
         HBCinstance = matrixHBC.matrixHBC(integrationPoints,ue,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa)
         Pinstance = vectorP.vectorP(integrationPoints,ue,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa,selectedGrid.GlobalData.Tot)
-        Cinstance = matrixC.matrixC(integrationPoints,nodesData[0],realElementInstance,selectedGrid.GlobalData.SpecificHeat, selectedGrid.GlobalData.Density)
+        Cinstance = matrixC.matrixC(integrationPoints,realElementInstance,selectedGrid.GlobalData.SpecificHeat, selectedGrid.GlobalData.Density)
 
         agreg.aggregate(Hinstance.H, HBCinstance.HBC, Pinstance.vectorP, Cinstance.C, nodesGlobalIDs)
-        
-        # agreg.print_HG()
-        # print(f'\nWektor P zagregowany:\n')
-        # agreg.print_PG()
-        # print(f'\Macierz C zagregowana:\n')
-        # agreg.print_CG()
-        
+          
     s = solve.Solve(agreg.HG, agreg.PG, agreg.CG, selectedGrid.GlobalData.InitialTemp,selectedGrid.GlobalData.SimulationStepTime, selectedGrid.GlobalData.SimulationTime)
-    #s.print_tvector(s.t_nonstationary_end)
     s.print_simulation()
     # print(s.t_nonstationary_table)
 
@@ -111,7 +104,7 @@ def debug_output():
                 print(r.dNdXTab, file=f)
                 print("\n(" + str(i) + ")" + "Macierz dN / dY dla wskazanych wezlow", file=f)
                 print(r.dNdYTab, file=f)
-                h = matrixH.matrixH(integrationPoints,r ,nodesData[0],selectedGrid.GlobalData.Conductivity)
+                h = matrixH.matrixH(integrationPoints,r,selectedGrid.GlobalData.Conductivity)
                 print("\n(" + str(i) + ")" + "Macierz H wskazanych wezlow", file=f)
                 print(h.H, file=f)
                 hbc = matrixHBC.matrixHBC(integrationPoints,ue,nodesData[0],nodesData[1],selectedGrid.GlobalData.Alfa)
@@ -124,7 +117,7 @@ def debug_output():
                 print(P.vectorsP, file=f)
                 print("\n(" + str(i) + ")" + "Wektor P dla elementu", file=f)
                 print(P.vectorP, file=f)
-                c = matrixC.matrixC(integrationPoints,nodesData[0],r ,selectedGrid.GlobalData.SpecificHeat, selectedGrid.GlobalData.Density)
+                c = matrixC.matrixC(integrationPoints,r ,selectedGrid.GlobalData.SpecificHeat, selectedGrid.GlobalData.Density)
                 print("\n(" + str(i) + ")" + "Macierz C dla elementu", file=f)
                 print(c.C, file=f)
                 nodesGlobalIDs = selectedGrid.getElementIDs(i)

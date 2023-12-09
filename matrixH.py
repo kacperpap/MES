@@ -12,7 +12,7 @@ class matrixH:
               UWAGA, nalezy poprawnie okreslic wierzcholki na podstawie danych zawartych w grid.Elements
         heatTransferCoeff -> wspolczynnik wymiany ciepla (konwekcyjno- radiacyjny)
     """
-    def __init__(self,integrationPointsNumber,realElement,nodes, heatTransferCoeff = 30):
+    def __init__(self,integrationPointsNumber,realElement, heatTransferCoeff = 30):
         self.realElement = realElement
         self.dNdXTab = self.realElement.dNdXTab
         self.dNdYTab = self.realElement.dNdYTab

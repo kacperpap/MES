@@ -40,67 +40,33 @@ class Agregation:
             
             
             
-  def print_HG(self, f = None):
-    if f is None:
-      for row in self.HG:
-          print('[', end='')
-          for val in row:
-              if val == 0:
-                  print("{:7}".format("0"), end="  ")
-              else:
-                  print("{:7.3f}".format(val), end="  ")
-          print(']')
+  def print_matrix(self, matrix, format_str, f=None):
+    assert isinstance(matrix, np.ndarray), "Expected a numpy array"
+    if matrix.ndim == 1:
+        print('[', end='', file=f)
+        for val in matrix:
+            if val == 0:
+                print("{:6}".format("0"), end="  ", file=f)
+            else:
+                print(format_str.format(val), end="  ", file=f)
+        print(']', file=f)
     else:
-      for row in self.HG:
-          print('[', end='',file=f)
-          for val in row:
-              if val == 0:
-                  print("{:7}".format("0"), end="  ",file=f)
-              else:
-                  print("{:7.3f}".format(val), end="  ",file=f)
-          print(']',file=f)
-          
-          
-          
-  def print_PG(self, f = None):
-    if f is None:
-      print('[', end='')
-      for i in self.PG:
-        if i == 0:
-          print("{:6}".format("0"), end="  ")
-        else:
-          print("{:6.3f}".format(i), end="  ")
-      print(']')
-    else:
-      print('[', end='',file=f)
-      for i in self.PG:
-        if i == 0:
-          print("{:6}".format("0"), end="  ",file=f)
-        else:
-          print("{:6.3f}".format(i), end="  ",file=f)
-      print(']',file=f)
-      
-      
-      
-  def print_CG(self, f = None):
-    if f is None:
-      for row in self.CG:
-          print('[', end='')
-          for val in row:
-              if val == 0:
-                  print("{:6}".format("0"), end="  ")
-              else:
-                  print("{:6.1f}".format(val), end="  ")
-          print(']')
-    else:
-      for row in self.CG:
-          print('[', end='',file=f)
-          for val in row:
-              if val == 0:
-                  print("{:6}".format("0"), end="  ",file=f)
-              else:
-                  print("{:6.1f}".format(val), end="  ",file=f)
-          print(']',file=f)
+        for row in matrix:
+            print('[', end='', file=f)
+            for val in row:
+                if val == 0:
+                    print("{:6}".format("0"), end="  ", file=f)
+                else:
+                    print(format_str.format(val), end="  ", file=f)
+            print(']', file=f)
 
+  def print_HG(self, f=None):
+    self.print_matrix(self.HG, "{:7.3f}", f)
+
+  def print_PG(self, f=None):
+    self.print_matrix(self.PG, "{:6.3f}", f)
+
+  def print_CG(self, f=None):
+    self.print_matrix(self.CG, "{:6.1f}", f)
     
     

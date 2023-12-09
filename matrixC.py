@@ -2,7 +2,7 @@ import numpy as np
 
 
 class matrixC:
-    def __init__(self,integrationPointsNumber,nodes,realElement,specificHeat, density):
+    def __init__(self,integrationPointsNumber,realElement,specificHeat, density):
         
         self.realElement = realElement
         self.NTab = self.realElement.universalElement2D.shapeFunTab
