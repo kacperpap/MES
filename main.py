@@ -23,11 +23,11 @@ args = parser.parse_args()
 
 
 
-# selectedGrid = grid.Grid("Test1_4_4.txt")
-selectedGrid = grid.Grid("Test2_4_4_MixGrid.txt")
+selectedGrid = grid.Grid("Test1_4_4.txt")
+# selectedGrid = grid.Grid("Test2_4_4_MixGrid.txt")
 # selectedGrid = grid.Grid("Test3_31_31_kwadrat.txt")
 
-integrationPoints = 2
+integrationPoints = 4
 
 
 def main():

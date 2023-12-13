@@ -1,4 +1,5 @@
 import os
+import shutil
 
 
 class ParaView:
@@ -45,8 +46,9 @@ class ParaView:
 
     def create_vtk_simulation_files(self):
         directory = "simulation"
-        if not os.path.exists(directory):
-            os.makedirs(directory)
+        if os.path.exists(directory):
+            shutil.rmtree(directory)
+        os.makedirs(directory)
         for i in range(len(self.dataTab)):
             filename = os.path.join(directory, f"step{i+1}.vtk")
             self.create_vtk_file(filename, i)
