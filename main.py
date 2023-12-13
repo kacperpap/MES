@@ -12,6 +12,7 @@ import solve
 import matrixC
 import cProfile
 import pstats
+import visualizeData
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--verbose", help="Wyświetl kroki rozwiązania", action="store_true")
@@ -46,7 +47,7 @@ def main():
           
     s = solve.Solve(agreg.HG, agreg.PG, agreg.CG, selectedGrid.GlobalData.InitialTemp,selectedGrid.GlobalData.SimulationStepTime, selectedGrid.GlobalData.SimulationTime)
     s.print_simulation()
-    # print(s.t_nonstationary_table)
+    paraView = visualizeData.ParaView(selectedGrid,s.t_nonstationary_table)
 
 
 def debug_output():
