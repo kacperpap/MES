@@ -175,7 +175,9 @@ class JacobyMatrix:
         
         self.dXdKsi = 0; self.dYdKsi = 0; self.dXdEta = 0; self.dYdEta = 0
              
-        #tylko dla punktu calkowania ipc                
+        #tylko dla punktu calkowania ipc -> Interpolacja: x_i = N1*x1 + N2*x2 + N3*x3 + N4*x4
+        #a nastepnie pochodne: dX_i/dKsi = dN1/dKsi * x1 + ... + dN4/dKsi * x4 
+                       
         for i in range(4):
             self.dXdKsi += self.nodes[i,0] * self.shapeDerivatives.dNdKsiTab[iPC][i]
             self.dYdKsi += self.nodes[i,1] * self.shapeDerivatives.dNdKsiTab[iPC][i]

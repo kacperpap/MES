@@ -61,7 +61,7 @@ class Agregation:
             print(']', file=f)
 
   def print_HG(self, f=None):
-    self.print_matrix(self.HG, "{:7.3f}", f)
+    self.print_matrix(self.HG, "{:6.1f}", f)
 
   def print_PG(self, f=None):
     self.print_matrix(self.PG, "{:6.3f}", f)

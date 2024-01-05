@@ -30,7 +30,7 @@ class ParaView:
                 f.write(f"4 {cell[0] - 1} {cell[1] - 1} {cell[2] - 1} {cell[3] - 1}\n")
             
             f.write("\n")
-            f.write("CELL_TYPES 9\n")
+            f.write(f"CELL_TYPES {self.elementsNum}\n")
             
             for i in range(self.elementsNum):
                 f.write("9\n")
