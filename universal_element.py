@@ -119,6 +119,7 @@ class UniversalElement2D:
                 self.dNdEtaTab[i][j] = self.shapeFun.dNdEtaFun[j](self.schema2D.P[i,0])
                 
         #obliczanie macierzy Hbc dla wszystkich punktow B[i,j]
+        #liczbę wierszy definiuje liczba wszystkich punktow calkowania na wszystkich powierzchniach (4 sides)
         self.BCis_shapeFuncsTab = np.zeros((4*integrationPointsNumber,4),dtype=float)
         
         for i in range(4):
