@@ -3,7 +3,6 @@ import numpy as np
 
 class vectorP:
     def __init__(self,integrationPointsNumber,universalElement ,nodes,nodesBounderConditionFlags,alpha, Tambient):
-        # self.universalElement2D = ue.UniversalElement2D(integrationPointsNumber)
         W = universalElement.W
         BCis_shapeFuncsTab = universalElement.BCis_shapeFuncsTab
         
