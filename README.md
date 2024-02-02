@@ -41,6 +41,19 @@ A more comprehensive description is available in the report located in the repos
 
 5. **Run with additional options**: You can run your code with additional flags: `python.exe ./main.py --verbose` / `python.exe ./main.py -v` or `python.exe ./main.py --profile` / `python.exe ./main.py -p`. The verbose option generares `output.txt` file which is useful for debugging purposes. It shows step-by-step calculations. Be aware that running that on a large mesh will take some time. The profile option uses `cProfile` and `pstats` to generate an ```efficiency.txt``` file, which shows the efficiency stats of computing the simulation.
 
+
+## Example of terminal simulation results:
+<p align="center">
+  <img src="https://i.imgur.com/sAM7Luz.png" width="350" height="500" />
+</p>
+
+
+## ParaView simulation
+
+The code generates `.vtk` files, which can be uploaded into the ParaView. Example of simulation in ParaView shown below:
+![paraview_simulation](https://i.imgur.com/0TaG2A5.gifv)
+
+
 ## Sources
 
 The primary substantive basis of the code presented in this repository is derived from exercises and lectures. Additionally, content is sourced from the following book:
