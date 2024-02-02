@@ -44,14 +44,16 @@ A more comprehensive description is available in the report located in the repos
 
 ## Example of terminal simulation results:
 <p align="center">
-  <img src="https://i.imgur.com/sAM7Luz.png" width="350" height="500" />
+  <img src="https://github.com/kacperpap/MES/assets/64956354/954d6962-408b-4b63-948f-378a4a5436c3" width="350" height="500" />
 </p>
 
 
 ## ParaView simulation
 
 The code generates `.vtk` files, which can be uploaded into the ParaView. Example of simulation in ParaView shown below:
-![paraview_simulation](https://i.imgur.com/0TaG2A5.gifv)
+
+![simulation](https://github.com/kacperpap/MES/assets/64956354/c0ba7035-0155-4bde-9ed9-c31fa3f37612)
+
 
 
 ## Sources
